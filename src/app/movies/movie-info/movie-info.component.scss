@@ -1,0 +1,122 @@
+$color:#111827;
+$font : 'DM Sans';
+$secondaryColor:#9CA3AF;
+.container {
+  padding: 20px;
+  
+}
+.trailer_and_title {
+  display: flex;
+  flex-direction: column;
+}
+.trailer {
+  height: 330px;
+  width: 100%;
+  background-color: red;
+  border-radius: 20px;
+}
+.movie_info_container {
+  display: flex;
+  font-family: $font;
+  padding: 10px 0;
+  color: $color;
+}
+.movie_info_title_group {
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  flex: 5;
+}
+
+.genres {
+  margin-left: 1rem;
+  text-align: center;
+  font-family: $font;
+  font-weight: 500;
+  font-size: 14px;
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.genres:hover {
+  color: #ffffff;
+  background-color: #000;
+}
+.genre_buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 84px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(232, 232, 232, 0.35);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.rating_and_icons_group {
+  margin-left: 180px;
+  flex: 3;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+.icons {
+  display: flex;
+  flex: 1;
+  justify-content: space-evenly;
+}
+.icons img {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+}
+.rating {
+  margin-right: 20px;
+  display: flex;
+  justify-content: flex-end;
+  margin: 10px;
+  align-items: center;
+  flex: 1;
+}
+.rating h2:nth-child(1) {
+  font-size: 25px;
+}
+.rating h2:nth-child(2) {
+  font-size: 20px;
+  color: $secondaryColor;
+}
+.movie_others_info {
+  display: flex;
+}
+.overview{
+  font-size: 4px;
+}
+.movie_posters img {
+  width: 320px;
+  height: 100%;
+  border-radius: 15px;
+}
+.underline {
+  height: 2px;
+  width: 100%;
+  background-color: $secondaryColor;
+}
+.others_info {
+  font-family: $font;
+  display: flex;
+  line-height: 25px;
+  flex-direction: column;
+  padding: 20px;
+}
+.others_info p {
+  font-family: DM Sans;
+  font-size: 18px;
+  font-weight: 700;
+  color: $color;
+}
+.others_info span{
+  font-size: 14px;
+  color: $secondaryColor;
+}

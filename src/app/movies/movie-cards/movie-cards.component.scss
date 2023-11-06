@@ -1,0 +1,49 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-wrap: wrap;
+}
+.cards_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "DM Sans", sans-serif;
+}
+.movie_image img{
+    width: 250px;
+        cursor: pointer;
+
+}
+.location_and_year {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  color: #9ca3af;
+  width: 250px;
+  padding: 4px;
+}
+.title {
+  color: #111827;
+  font-size: 26px;
+  font-weight: 900;
+  padding: 10px;
+  width: 250px;
+  line-height: 30px;
+}
+.rating {
+  display: flex;
+  color: #111827;
+  font-weight: 600;
+  justify-content: space-between;
+  width: 250px;
+  padding: 4px;
+}
+.genre {
+  color: #9ca3af;
+  width: 250px;
+  font-weight: 600;
+  padding: 4px;
+}
