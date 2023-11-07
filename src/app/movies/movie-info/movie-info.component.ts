@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { ActivatedRoute } from '@angular/router';
 import { movieInfoType } from './movieInfoType';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-movie-info',
@@ -10,17 +9,19 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./movie-info.component.scss'],
 })
 export class MovieInfoComponent {
+   playerConfig = {
+    controls: 0,
+    mute: 1,
+    autoplay: 1
+  };
   private apiLoaded = false;
   constructor(
     private movieService: MovieService,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute
   ) {}
   movieId: number;
   trailer: string = '';
-  poster_path: string = '';
-  @Input() videoId: string;
   movieInfo: movieInfoType;
-  myVideo = 'https://www.youtube.com/watch?v=';
   ngOnInit() {
     if (!this.apiLoaded) {
       const tag = document.createElement('script');
@@ -28,7 +29,6 @@ export class MovieInfoComponent {
       document.body.appendChild(tag);
       this.apiLoaded = true;
     }
-
     const id = this.route.snapshot.params['id'];
     this.movieId = id;
     this.movieService.getMovieById(this.movieId).subscribe((res: any) => {
@@ -45,11 +45,9 @@ export class MovieInfoComponent {
         }
         i++;
       }
-      this.videoId = this.myVideo + this.trailer;
-      console.log(this.videoId);
     });
   }
- 
+
   transformMinute(value: number): string {
     let hours = Math.floor(value / 60);
     let minutes = Math.floor(value % 60);

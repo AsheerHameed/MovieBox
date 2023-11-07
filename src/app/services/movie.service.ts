@@ -1,3 +1,4 @@
+import { getLocaleFirstDayOfWeek } from '@angular/common';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -44,14 +45,22 @@ export class MovieService {
     );
   }
 
-  // getHighestRatedMovies() {
-  //   const headers = new HttpHeaders({
-  //     Authorization: `Bearer ${this.apiBearerToken}`,
-  //     accept: 'application/json',
-  //   });
-  //   return this.http.get(
-  //     `https://api.themoviedb.org/3/account/12987762/rated/movies?language=en-US&page=1&sort_by=created_at.asc`,
-  //     { headers }
-  //   );
-  // }
+  getHighestRatedSeries() {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.apiBearerToken}`,
+      accept: 'application/json',
+    });
+    return this.http.get(
+      `https://api.themoviedb.org/3/tv/top_rated?language=en-US`,
+      { headers }
+    );
+  }
+
+  getSeriesById(id: number) {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.apiBearerToken}`,
+      accept: 'application/json',
+    });
+    return this.http.get(`https://api.themoviedb.org/3/tv/${id}`, { headers });
+  }
 }

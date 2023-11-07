@@ -1,7 +1,12 @@
 <div class="container">
   <div class="trailer_and_title">
     <div class="trailer">
-   
+      <youtube-player
+        videoId="{{ trailer }}"
+        [width]="1480"
+        [height]="340"
+        [playerVars]="playerConfig"
+      ></youtube-player>
     </div>
     <div class="movie_info_container">
       <div class="movie_info_title_group">
