@@ -34,7 +34,7 @@ export class MovieService {
       { headers }
     );
   }
-
+  //trailer
   getMovieTrailer(id: number) {
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.apiBearerToken}`,
@@ -62,5 +62,40 @@ export class MovieService {
       accept: 'application/json',
     });
     return this.http.get(`https://api.themoviedb.org/3/tv/${id}`, { headers });
+  }
+
+  getGenresById() {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.apiBearerToken}`,
+      accept: 'application/json',
+    });
+    return this.http.get(
+      'https://api.themoviedb.org/3/genre/tv/list?language=en',
+      { headers }
+    );
+  }
+
+  getLatestMovies() {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.apiBearerToken}`,
+      accept: 'application/json',
+    });
+    return this.http.get(
+      'https://api.themoviedb.org/3/movie/popular?language=en-US',
+      {
+        headers,
+      }
+    );
+  }
+
+  getPopularActors() {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.apiBearerToken}`,
+      accept: 'application/json',
+    });
+    return this.http.get(
+      'https://api.themoviedb.org/3/person/popular?language=en-US',
+      { headers }
+    );
   }
 }

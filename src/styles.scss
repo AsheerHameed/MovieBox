@@ -11,14 +11,18 @@
 // @include typography($font-family: $material-typeface, $type-scale: $material-type-scale);
 // @include theme($default-palette);
 
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
-
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap');
 
-.owl-theme .owl-nav [class*=owl-]{
-background-color: #111827;
-font-family: 'DM sans';
+
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+.owl-theme .owl-nav [class*=owl-] {
+  background:transparent !important;
 
 }
+* {
+  margin: 0;
+  padding: 0;
+}
+

@@ -1,1 +1,25 @@
-<p>featured-casts works!</p>
+<div class="container">
+  <div class="head_and_button">
+    <h2>Featured Actors</h2>
+    <p>See more ></p>
+  </div>
+  <owl-carousel-o [options]="customOptionsCard">
+    <ng-template carouselSlide *ngFor="let profile of results">
+      <div class="cards">
+        <div class="cards_container">
+          <div class="movie_image">
+            <img
+              src="https://image.tmdb.org/t/p/w500{{ profile.profile_path }}"
+              alt=""
+            />
+          </div>
+
+          <div class="title">
+            {{ profile.name }}
+          </div>
+
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>

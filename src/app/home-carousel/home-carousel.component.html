@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="carousel">
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let movie of results.slice(11,17)">
+        <img
+          src="https://image.tmdb.org/t/p/original{{ movie.backdrop_path }}"
+        />
+        <div class="carousel-inner">
+          <div class="name">
+           <h2>
+            {{ movie.title }}
+           </h2>
+          </div>
+          <div class="rating">
+            <img src="assets/imdb.png" alt="" />
+            <div>{{ movie.vote_average | number : "1.0-1" }} ⭐</div>
+          </div>
+          <div class="overview">
+          <p>
+            {{ movie.overview }}
+           </p>
+          </div>
+          <div class="watch" >
+            <button style="cursor: pointer;">Watch trailer</button>
+          </div>
+        </div>
+      </ng-template>
+    </owl-carousel-o>
+  </div>
+</div>

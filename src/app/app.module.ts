@@ -13,6 +13,9 @@ import { IgxCarouselModule } from 'igniteui-angular';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxCarouselModule } from 'ngx-light-carousel';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     NewArrivalComponent,
     FeaturedCastsComponent,
     HomeComponent,
-    
+    HomeCarouselComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     CarouselModule,
     HttpClientModule,
     YouTubePlayerModule,
+    NgxCarouselModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent],
