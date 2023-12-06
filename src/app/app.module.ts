@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxCarouselModule } from 'ngx-light-carousel';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
+import { SearchedResultInfoComponent } from './searched-result-info/searched-result-info.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
     FeaturedCastsComponent,
     HomeComponent,
     HomeCarouselComponent,
+    SearchedResultInfoComponent,
   ],
   imports: [
     BrowserModule,

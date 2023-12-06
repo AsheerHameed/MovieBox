@@ -30,7 +30,7 @@ export class MovieService {
       Authorization: `Bearer ${this.apiBearerToken}`,
     });
     return this.http.get(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${this.apiKey}`,
+      `${this.apiUrl}/movie/${id}?api_key=${this.apiKey}`,
       { headers }
     );
   }
@@ -40,7 +40,7 @@ export class MovieService {
       Authorization: `Bearer ${this.apiBearerToken}`,
     });
     return this.http.get(
-      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${this.apiKey}`,
+      `${this.apiUrl}/movie/${id}/videos?api_key=${this.apiKey}`,
       { headers }
     );
   }
@@ -95,6 +95,17 @@ export class MovieService {
     });
     return this.http.get(
       'https://api.themoviedb.org/3/person/popular?language=en-US',
+      { headers }
+    );
+  }
+
+  getMovieFromSearch(movieName:string){
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.apiBearerToken}`,
+      accept: 'application/json',
+    });
+    return this.http.get(
+      `${this.apiUrl}/search/movie?query=${movieName}&api_key=${this.apiKey}`,
       { headers }
     );
   }
