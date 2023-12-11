@@ -17,6 +17,10 @@
           <div class="title">
             {{ profile.name }}
           </div>
+          <h2 id="known">Known For:</h2>
+  <div class="known_for" *ngFor="let known of profile.known_for">
+    {{known.name || known.original_title}}
+  </div>
 
         </div>
       </div>

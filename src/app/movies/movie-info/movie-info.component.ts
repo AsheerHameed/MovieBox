@@ -9,26 +9,15 @@ import { movieInfoType } from './movieInfoType';
   styleUrls: ['./movie-info.component.scss'],
 })
 export class MovieInfoComponent {
-   playerConfig = {
-    controls: 0,
-    mute: 1,
-    autoplay: 1
-  };
-  private apiLoaded = false;
   constructor(
     private movieService: MovieService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
   ) {}
   movieId: number;
   trailer: string = '';
   movieInfo: movieInfoType;
   ngOnInit() {
-    if (!this.apiLoaded) {
-      const tag = document.createElement('script');
-      tag.src = 'https://www.youtube.com/iframe_api';
-      document.body.appendChild(tag);
-      this.apiLoaded = true;
-    }
+
     const id = this.route.snapshot.params['id'];
     this.movieId = id;
     this.movieService.getMovieById(this.movieId).subscribe((res: any) => {
@@ -42,6 +31,7 @@ export class MovieInfoComponent {
       while (i < res.results.length) {
         if (res.results[i].type === 'Trailer') {
           this.trailer = res.results[i].key;
+          console.log(this.trailer);
         }
         i++;
       }
@@ -53,4 +43,5 @@ export class MovieInfoComponent {
     let minutes = Math.floor(value % 60);
     return hours + ' hrs ' + minutes + ' mins';
   }
+
 }

@@ -77,15 +77,43 @@ $secondaryColor: #be123c;
 .cards {
   display: flex;
 }
-.something {
-  background-color: red;
-  width: 100%;
-  height: 400px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+
+.known_for {
+display: flex;
+justify-content: flex-start;
+width: 100%;
+font-family: DM Sans;
+font-size: 12px;
+font-weight: 700;
+line-height: 16px;
+letter-spacing: 0em;
+text-align: left;
+color: #9CA3AF;
+margin-left: 12%;
 }
-.cards_green {
-  background-color: green;
-  margin: 0 20px;
+// .genre_buttons {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: fit-content;
+//   height: 30px;
+//   font-size: 12px;
+//   border-radius: 15px;
+//   border: 1px solid rgba(232, 232, 232, 0.35);
+//   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+//   flex-shrink: 0;
+//   cursor: pointer;
+//   margin-left: 10px;
+// }
+
+// .genres
+// {
+// display: flex;
+// }
+#known {
+display: flex;
+width: 100%;
+margin-left: 12%;
+font-style: 18px;
+color: #111827;
 }

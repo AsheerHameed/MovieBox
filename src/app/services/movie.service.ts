@@ -15,7 +15,6 @@ export class MovieService {
     'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1OGNhZmRkMWYxYzM1Zjg1MjcyZmNhNjNmYTJlNzMxNyIsInN1YiI6IjYyYzAxN2IwOTY3MmVkMDA3ZWU5OTMwMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.vBV1wRkKzi1xBDayzQhuqLjwkcSnQ9SEssc6asQWyG4';
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {}
-
   // function to get movies
   getMovies() {
     const headers = new HttpHeaders({

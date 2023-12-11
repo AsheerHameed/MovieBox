@@ -10,38 +10,15 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class FeaturedCastsComponent {
   id: number;
-  customOptions: OwlOptions = {
-    loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    navSpeed: 700,
-    navText: ['<', '>'],
-    responsive: {
-      0: {
-        items: 1,
-      },
-      400: {
-        items: 2,
-      },
-      740: {
-        items: 3,
-      },
-      940: {
-        items: 1,
-      },
-    },
-    nav: true,
-  };
   customOptionsCard: OwlOptions = {
     loop: false,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: true,
     navSpeed: 700,
-    navText: ['<', '>'],
+    navText: [
+    "",""],
     responsive: {
       0: {
         items: 1,
@@ -58,6 +35,7 @@ export class FeaturedCastsComponent {
     },
     nav: true,
   };
+
   results: PouplarActors[];
   genreId: number;
   genreName: string;
@@ -67,7 +45,7 @@ export class FeaturedCastsComponent {
   ngOnInit() {
     this.movieService.getPopularActors().subscribe((res: any) => {
       this.results = res.results;
-      // console.log('actors', this.results);
+      console.log('actors', this.results);
     });
   }
 }

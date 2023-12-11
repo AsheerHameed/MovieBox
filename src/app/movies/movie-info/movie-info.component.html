@@ -1,10 +1,10 @@
-<div class="container">
+<!-- <div class="container">
   <div class="trailer_and_title">
     <div class="trailer">
       <youtube-player
         videoId="{{ trailer }}"
         [width]="1480"
-        [height]="340"
+        [height]="440"
         [playerVars]="playerConfig"
       ></youtube-player>
     </div>
@@ -35,7 +35,6 @@
     </div>
   </div>
 
-  <!-- actual info starts here -->
   <div class="movie_others_info">
     <div class="movie_posters">
       <img
@@ -74,6 +73,106 @@
           >{{ language.name }} ,
         </span>
       </p>
+    </div>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="left_container">
+    <div class="left_container-movie_posters">
+      <img
+        src="https://image.tmdb.org/t/p/w500{{ movieInfo.poster_path }}"
+        alt=""
+      />
+    </div>
+    <div class="left_container-watch_trailer">
+      <a [href]="'https://www.youtube.com/watch?v=' + trailer" target="_blank">
+        <input type="button" value="Watch trailer" />
+      </a>
+    </div>
+    <div class="left_container-fav-group">
+      <div class="left_container-fav-group-favorite">
+        <img
+          src="assets/heart.png"
+          width="26px"
+          height="26px"
+          alt=""
+          srcset=""
+        />
+        <p>Favorite</p>
+      </div>
+      <div class="left_container-fav-group-watch_later">
+        <img
+          src="assets/bookmark-white.png"
+          width="26px"
+          height="26px"
+          alt=""
+          srcset=""
+        />
+        <p>Watch Later</p>
+      </div>
+      <div class="left_container-fav-group-watched">
+        <img
+          src="assets/watched.png"
+          width="26px"
+          height="26px"
+          alt=""
+          srcset=""
+        />
+        <p>Watched</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="right_container">
+    <div class="right_container-title">
+      <h2>{{ movieInfo.title }}</h2>
+    </div>
+    <div class="right_container-cta">
+      <div class="right_container-cta-watch">
+        <input type="button" value="Watch" />
+      </div>
+      <div class="right_container-cta-bookmark">
+        <input type="button" value="Bookmark" />
+      </div>
+    </div>
+    <div class="right_container-storyline-overview-group">
+      <div class="right_container-storyline-overview-group-storyline">
+        <h2>STORYLINE</h2>
+      </div>
+      <div class="right_container-storyline-overview-group-overview">
+        <p>
+         {{movieInfo.overview}}
+        </p>
+      </div>
+    </div>
+
+    <div class="right_container_rating_table">
+      <div class="right_container_rating_table-rating">
+        <h6>Rating</h6>
+        <p>{{movieInfo.vote_average | number:'1.0-1'}} </p>
+      </div>
+      <div class="right_container_rating_table-release">
+        <h6>Release year</h6>
+        <p>{{movieInfo.release_date | date:'yyyy'}}</p>
+      </div>
+      <div class="right_container_rating_table-genres" >
+        <h6>Genres</h6>
+        <div class="span_group">
+          <span *ngFor="let genre of movieInfo.genres">{{genre.name}}</span>
+        </div>
+      </div>
+      <div class="right_container_rating_table-countries">
+        <h6>Conutries</h6>
+        <div class="countries_group">
+
+          <h4 *ngFor="let countries of movieInfo.production_countries">{{countries.name}}</h4>
+        </div>
+      </div>
+      <div class="right_container_rating_table-duration">
+        <h6>Duration</h6>
+        <p>{{transformMinute(movieInfo.runtime)}}</p>
+      </div>
     </div>
   </div>
 </div>

@@ -4,6 +4,7 @@
       <ng-template
         carouselSlide
         *ngFor="let movie of results.slice(5, 12)"
+
         let-i="index"
       >
         <img
@@ -75,7 +76,6 @@
           class="login"
           placeholder="What do you want to watch?"
           (keyup.enter)="getSearchResults(movieSearch.value)"
-
         />
 
       <div
