@@ -32,7 +32,11 @@
             "styles": [
               "src/styles.scss",
               "node_modules/slick-carousel/slick/slick.scss",
-              "node_modules/slick-carousel/slick/slick-theme.scss"
+              "node_modules/slick-carousel/slick/slick-theme.scss",
+              "node_modules/ngx-spinner/animations/ball-scale-multiple.css",
+              "node_modules/ngx-spinner/animations/square-jelly-box.css",
+              "node_modules/ngx-spinner/animations/pacman.css"
+
             ],
             "scripts": [
               "./node_modules/hammerjs/hammer.min.js",

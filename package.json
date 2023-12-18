@@ -27,6 +27,7 @@
     "ngx-light-carousel": "^1.1.21",
     "ngx-owl-carousel-o": "^16.0.0",
     "ngx-slick-carousel": "^17.0.0",
+    "ngx-spinner": "^16.0.2",
     "rxjs": "~7.8.0",
     "slick-carousel": "^1.8.1",
     "tslib": "^2.3.0",

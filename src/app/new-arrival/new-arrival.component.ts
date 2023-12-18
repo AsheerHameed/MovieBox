@@ -20,6 +20,8 @@ export class NewArrivalComponent {
     pullDrag: true,
     dots: true,
     navSpeed: 700,
+    autoplay:true,
+    autoplayTimeout:2000,
     navText: [' ', ' '],
     responsive: {
       0: {
@@ -51,8 +53,6 @@ export class NewArrivalComponent {
   ngOnInit() {
     this.movieService.getLatestMovies().subscribe((res: any) => {
       this.results = res.results;
-      // console.log('new ', res.results);
-
     });
   }
 }

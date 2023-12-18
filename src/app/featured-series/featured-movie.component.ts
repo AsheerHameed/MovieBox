@@ -44,18 +44,14 @@ export class FeaturedMovieComponent {
   constructor(private movieService: MovieService) {
     this.movieService.getHighestRatedSeries().subscribe((res: any) => {
       this.results = res.results;
-      // console.log(this.results);
     });
   }
+
   getGenreName(genreId: number, genreName: string) {}
   ngOnInit() {
     this.movieService.getGenresById().subscribe((res: any) => {
       this.genre_ids = res;
-      // console.log('Geres', this.genre_ids);
-      let myMap = new Map<string, string>(this.genre_ids[0]);
-      for (let key of myMap) {
-        console.log('some',key); //Lokesh Raj John
-      }
+      console.log('Genres', this.genre_ids);
     });
   }
 }

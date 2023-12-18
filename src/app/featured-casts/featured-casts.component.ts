@@ -16,6 +16,8 @@ export class FeaturedCastsComponent {
     touchDrag: true,
     pullDrag: true,
     dots: true,
+    autoplay:true,
+    autoplayTimeout:2000,
     navSpeed: 700,
     navText: [
     "",""],
@@ -45,7 +47,6 @@ export class FeaturedCastsComponent {
   ngOnInit() {
     this.movieService.getPopularActors().subscribe((res: any) => {
       this.results = res.results;
-      console.log('actors', this.results);
     });
   }
 }

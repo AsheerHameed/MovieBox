@@ -1,89 +1,7 @@
-<!-- <div class="container">
-  <div class="trailer_and_title">
-    <div class="trailer">
-      <youtube-player
-        videoId="{{ trailer }}"
-        [width]="1480"
-        [height]="440"
-        [playerVars]="playerConfig"
-      ></youtube-player>
-    </div>
-    <div class="movie_info_container">
-      <div class="movie_info_title_group">
-        <h2>
-          {{ movieInfo.title }} • {{ movieInfo.release_date | date : "yyyy" }} •
-          {{ transformMinute(movieInfo.runtime) }}
-        </h2>
-        <div
-          class="genres genre_buttons"
-          *ngFor="let genre of movieInfo.genres"
-        >
-          {{ genre.name }}
-        </div>
-      </div>
-      <div class="rating_and_icons_group">
-        <div class="icons">
-          <img src="assets/heart.png" alt="" />
-          <img src="assets/share.png" alt="" />
-          <img src="assets/bookmark-white.png" alt="" />
-        </div>
-        <div class="rating">
-          <h2>{{ movieInfo.vote_average | number : "1.0-1" }}⭐</h2>
-          <h2>| {{ movieInfo.vote_count }}</h2>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="movie_others_info">
-    <div class="movie_posters">
-      <img
-        src="https://image.tmdb.org/t/p/w500{{ movieInfo.poster_path }}"
-        alt=""
-      />
-    </div>
-    <div class="others_info">
-      <p class="overview">{{ movieInfo.overview }}</p>
-
-      <h1>Other's info</h1>
-      <p>
-        Release date : <span>{{ movieInfo.release_date }}</span>
-      </p>
-      <div class="underline"></div>
-
-      <p>
-        Budget : <span>{{ movieInfo.budget }}</span>
-      </p>
-      <div class="underline"></div>
-      <p>
-        Revenue : <span>{{ movieInfo.revenue }}</span>
-      </p>
-      <div class="underline"></div>
-      <p>
-        Production companies :
-        <span *ngFor="let company of movieInfo.production_companies">
-          {{ company.name }},
-        </span>
-      </p>
-      <div class="underline"></div>
-
-      <p>
-        Languages :
-        <span *ngFor="let language of movieInfo.spoken_languages"
-          >{{ language.name }} ,
-        </span>
-      </p>
-    </div>
-  </div>
-</div> -->
-
-<div class="container">
+<div class="container" *ngIf="showPage">
   <div class="left_container">
     <div class="left_container-movie_posters">
-      <img
-        src="https://image.tmdb.org/t/p/w500{{ movieInfo.poster_path }}"
-        alt=""
-      />
+      <img src="https://image.tmdb.org/t/p/w500{{ movieInfo.poster_path }}" alt="" />
     </div>
     <div class="left_container-watch_trailer">
       <a [href]="'https://www.youtube.com/watch?v=' + trailer" target="_blank">
@@ -92,33 +10,18 @@
     </div>
     <div class="left_container-fav-group">
       <div class="left_container-fav-group-favorite">
-        <img
-          src="assets/heart.png"
-          width="26px"
-          height="26px"
-          alt=""
-          srcset=""
-        />
+        <img [src]="heart" alt="Heart" (click)="toggleImage('heart')" width="26px" height="26px">
+
         <p>Favorite</p>
       </div>
       <div class="left_container-fav-group-watch_later">
-        <img
-          src="assets/bookmark-white.png"
-          width="26px"
-          height="26px"
-          alt=""
-          srcset=""
-        />
+        <img [src]="bookmark" alt="Bookmark" (click)="toggleImage('bookmark')" width="26px" height="26px"
+          (click)="toggleImage('bookmark')">
+
         <p>Watch Later</p>
       </div>
       <div class="left_container-fav-group-watched">
-        <img
-          src="assets/watched.png"
-          width="26px"
-          height="26px"
-          alt=""
-          srcset=""
-        />
+        <img [src]="watched" alt="Watched" (click)="toggleImage('watched')" width="26px" height="26px">
         <p>Watched</p>
       </div>
     </div>
@@ -142,7 +45,7 @@
       </div>
       <div class="right_container-storyline-overview-group-overview">
         <p>
-         {{movieInfo.overview}}
+          {{movieInfo.overview}}
         </p>
       </div>
     </div>
@@ -156,7 +59,7 @@
         <h6>Release year</h6>
         <p>{{movieInfo.release_date | date:'yyyy'}}</p>
       </div>
-      <div class="right_container_rating_table-genres" >
+      <div class="right_container_rating_table-genres">
         <h6>Genres</h6>
         <div class="span_group">
           <span *ngFor="let genre of movieInfo.genres">{{genre.name}}</span>
@@ -176,3 +79,5 @@
     </div>
   </div>
 </div>
+<ngx-spinner bdColor="" size="large" color="#111827" type="square-jelly-box" [fullScreen]="true">
+</ngx-spinner>

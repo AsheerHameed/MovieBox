@@ -10,6 +10,7 @@ $secondaryColor: #be123c;
   justify-content: space-between;
   align-items: center;
   margin: 0 30px;
+  padding: 20px 0;
 }
 .head_and_button h2 {
   color: $primaryColor;
@@ -38,7 +39,6 @@ $secondaryColor: #be123c;
 .movie_image img {
   width: 250px;
   cursor: pointer;
-  border-radius: 10px;
 }
 .location_and_year {
   font-size: 16px;

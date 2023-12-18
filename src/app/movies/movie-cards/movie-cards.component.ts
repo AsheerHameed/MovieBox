@@ -12,9 +12,6 @@ export class MovieCardsComponent {
     this.movie.getMovies().subscribe((res: any) => {
       this.movieInfo = res.results;
     });
-    // this.movie.getHighestRatedMovies().subscribe((res)=>{
-    //   console.log(res);
-    // })
   }
 }
 export default MovieCardsComponent;

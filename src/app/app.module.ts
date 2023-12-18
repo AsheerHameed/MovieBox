@@ -17,6 +17,8 @@ import { NgxCarouselModule } from 'ngx-light-carousel';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
 import { SearchedResultInfoComponent } from './searched-result-info/searched-result-info.component';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { SeriesInfoComponent } from './series-info/series-info.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { SearchedResultInfoComponent } from './searched-result-info/searched-res
     HomeComponent,
     HomeCarouselComponent,
     SearchedResultInfoComponent,
+    SeriesInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +42,8 @@ import { SearchedResultInfoComponent } from './searched-result-info/searched-res
     HttpClientModule,
     YouTubePlayerModule,
     NgxCarouselModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    NgxSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -133,7 +133,6 @@ export class HomeCarouselComponent {
         this.searchQueries.distinctTitles= [...new Set( this.searchQueries.title.map(obj => obj)) ];
         this.searchQueries.id.push(searchedResults[i].id)
       }
-      console.log(this.searchResult);
     });
   }
   clearValue() {
