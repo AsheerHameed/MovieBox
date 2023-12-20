@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, HostListener, Renderer2  } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { newArrivalResults } from '../featured-series/featuredSeriesType';
 import { MovieService } from '../services/movie.service';
@@ -47,9 +47,7 @@ export class HomeCarouselComponent {
   officialTrailers: string[] = [];
   trailerKeys: string[] = [];
   searchResult: searchResults[] = [];
-
-
-
+  isModalOpened : boolean = false;
   searchQueries = {
     title :[],
     distinctTitles: [],
@@ -58,8 +56,7 @@ export class HomeCarouselComponent {
   }
 
 
-  @ViewChild('#myDiv') myDiv: ElementRef;
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService,private el: ElementRef, private renderer: Renderer2) {}
   ngOnInit() {
     this.movieService.getLatestMovies().subscribe((res: any) => {
       this.results = res.results;
@@ -134,8 +131,16 @@ export class HomeCarouselComponent {
         this.searchQueries.id.push(searchedResults[i].id)
       }
     });
+    this.renderer.setStyle(this.el.nativeElement.querySelector('.search_results'), 'display', 'block');
+
   }
-  clearValue() {
-    this.searchResult = [];
+  @HostListener('document:click', ['$event'])
+  onClick(event: Event) {
+    const searchResults = this.el.nativeElement.querySelector('.search_results');
+    if (!searchResults.contains(event.target)) {
+      this.renderer.setStyle(searchResults, 'display', 'none');
+    }
   }
+
+
 }

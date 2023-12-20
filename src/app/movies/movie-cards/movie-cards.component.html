@@ -1,25 +1,49 @@
 <div class="container">
-  <div class="cards_container" *ngFor="let movie of movieInfo">
-    <div class="movie_image">
-      <img
-        src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
-        [routerLink]="['/movies/movie', movie.id]"
-        alt=""
-      />
-    </div>
-    <div class="location_and_year">
-      {{ movie.original_language | titlecase }} ,
-      {{ movie.release_date | date : "yyyy" }}
-    </div>
-    <div class="title">
-      {{ movie.title }}
-    </div>
-    <div class="rating">
-      <img src="assets/imdb.png" alt="" />
-      <div>{{ movie.vote_average }} ⭐</div>
-    </div>
-    <div class="genre">
-      <div>{{ movie.genre_ids }}</div>
+  <div class="movie_info" *ngIf= "currentRoute === '/movies' ">
+    <div class="cards_container" *ngFor="let movie of movieInfo">
+      <div class="movie_image">
+        <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" [routerLink]="['/movies/movie', movie.id]"
+          alt="" />
+      </div>
+      <div class="location_and_year">
+        {{ movie.original_language | titlecase }} ,
+        {{ movie.release_date | date : "yyyy" }}
+      </div>
+      <div class="title">
+        {{ compressWords(movie.title) }}
+      </div>
+      <div class="rating">
+        <img src="assets/imdb.png" alt="" />
+        <div>{{ movie.vote_average }} ⭐</div>
+      </div>
+      <div class="genres">
+        <p>{{ getGenreNamesByIds(movie.genre_ids,'movies') }}</p>
+      </div>
     </div>
   </div>
+<div class="container">
+  <div class="series_info" *ngIf= "currentRoute === '/series' ">
+    <div class="cards_container" *ngFor="let movie of seriesCards">
+      <div class="movie_image">
+        <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" [routerLink]="['/series/series', movie.id]"
+          alt="" />
+      </div>
+      <div class="location_and_year">
+        {{ movie.original_language | titlecase }} ,
+        {{ movie.first_air_date | date : "yyyy" }}
+      </div>
+      <div class="title">
+        {{ compressWords(movie.name) }}
+      </div>
+      <div class="rating">
+        <img src="assets/imdb.png" alt="" />
+        <div>{{ movie.vote_average }} ⭐</div>
+      </div>
+      <div class="genres">
+        <p>{{ getGenreNamesByIds(movie.genre_ids,'series') }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
 </div>

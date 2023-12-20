@@ -3,7 +3,7 @@
     <h2>Featured Actors</h2>
     <p>See more ></p>
   </div>
-  <owl-carousel-o [options]="customOptionsCard">
+  <owl-carousel-o [options]="OptionsCard">
     <ng-template carouselSlide *ngFor="let profile of results">
       <div class="cards">
         <div class="cards_container">
@@ -17,11 +17,12 @@
           <div class="title">
             {{ profile.name }}
           </div>
-          <h2 id="known">Known For:</h2>
-  <div class="known_for" *ngFor="let known of profile.known_for">
-    {{known.name || known.original_title}}
-  </div>
-
+          <div class="known_for_group">
+            <h2 id="known">Known For:</h2>
+            <div class="known_for" *ngFor="let known of profile.known_for">
+              {{known.name || known.original_title}}
+            </div>
+          </div>
         </div>
       </div>
     </ng-template>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MovieService } from '../services/movie.service';
-import { PouplarActors } from '../featured-series/featuredSeriesType';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { PouplarActors } from '../featured-series/featuredSeriesType';
 
 @Component({
   selector: 'app-featured-casts',
@@ -10,17 +10,17 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class FeaturedCastsComponent {
   id: number;
-  customOptionsCard: OwlOptions = {
+  OptionsCard: OwlOptions = {
     loop: false,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: true,
-    dots: true,
+    dots: false,
     autoplay:true,
-    autoplayTimeout:2000,
-    navSpeed: 700,
+    autoplayTimeout:7000,
+    navSpeed: 200,
     navText: [
-    "",""],
+    "<img src='assets/left-icon.png'/>","<img src='assets/right-icon.png'/>"],
     responsive: {
       0: {
         items: 1,

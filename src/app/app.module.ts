@@ -3,8 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MoviesModule } from './movies/movies.module';
-import { FeaturedMovieComponent } from './featured-series/featured-movie.component';
-import { NewArrivalComponent } from './new-arrival/new-arrival.component';
 import { FeaturedCastsComponent } from './featured-casts/featured-casts.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
@@ -18,18 +16,19 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
 import { SearchedResultInfoComponent } from './searched-result-info/searched-result-info.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { SeriesInfoComponent } from './series-info/series-info.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { OnboardingModule } from './onboarding/onboarding.module';
+import { FeaturedMovieComponent } from './featured-series/featured-series.component';
+import { UtilitiesService } from './utilities/utilities.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FeaturedMovieComponent,
-    NewArrivalComponent,
     FeaturedCastsComponent,
     HomeComponent,
     HomeCarouselComponent,
     SearchedResultInfoComponent,
-    SeriesInfoComponent
+    FeaturedMovieComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,8 +43,10 @@ import { SeriesInfoComponent } from './series-info/series-info.component';
     NgxCarouselModule,
     SlickCarouselModule,
     NgxSpinnerModule,
+    ReactiveFormsModule,
+    OnboardingModule
   ],
-  providers: [],
+  providers: [UtilitiesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

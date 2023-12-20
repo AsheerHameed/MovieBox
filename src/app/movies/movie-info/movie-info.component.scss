@@ -149,6 +149,7 @@ $secondaryColor: #9ca3af;
   .span_group {
     display: flex;
     margin-left: 52%;
+    flex-wrap: wrap;
   }
   .countries_group {
     display: flex;
@@ -172,7 +173,7 @@ $secondaryColor: #9ca3af;
       border: none;
       outline: none;
       font-size: 12px;
-      margin: 10px 5px;
+      margin: 5px;
       cursor: pointer;
     }
     span:hover {

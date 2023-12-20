@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="carousel">
     <owl-carousel-o [options]="customOptions">
@@ -35,8 +36,7 @@
       </ng-template>
     </owl-carousel-o>
   </div>
-
-  <div class="search_results" *ngFor="let result of searchResult">
+  <div class="search_results" *ngFor="let result of searchResult" (click)="isModalOpened = !isModalOpened" (clickOutside)="isModalOpened = false">
     <div *ngFor="let movie of searchQueries.distinctTitles; let i = index; let isLast = last">
       <div class="search_results_container">
         <div>

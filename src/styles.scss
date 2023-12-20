@@ -12,17 +12,34 @@
 // @include theme($default-palette);
 
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap');
 
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap');
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
-.owl-theme .owl-nav [class*=owl-] {
-  background:transparent !important;
 
-}
 * {
   margin: 0;
   padding: 0;
 }
 
+.owl-theme .owl-nav [class*=owl-] {
+  background:transparent !important;
+
+
+}
+
+.owl-carousel .owl-nav
+{
+  .owl-next{
+    position: relative;
+left: 46%;
+top: -345px;
+}
+.owl-prev{
+  position: relative;
+  top: -345px;
+
+  right: 48%;
+}
+}

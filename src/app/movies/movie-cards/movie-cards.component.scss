@@ -1,22 +1,30 @@
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    flex-wrap: wrap;
+.container,.series_info,.movie_info {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px;
+  gap: 0 65px;
 }
+
 .cards_container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-family: "DM Sans", sans-serif;
+  padding: 10px 0;
+  width: 250px;
 }
-.movie_image img{
-    width: 250px;
-        cursor: pointer;
+
+.movie_image img {
+  width: 250px;
+  cursor: pointer;
+  height: 375px;
+  border-radius: 25px;
 
 }
+
 .location_and_year {
   font-size: 16px;
   font-weight: 600;
@@ -25,14 +33,16 @@
   width: 250px;
   padding: 4px;
 }
+
 .title {
   color: #111827;
-  font-size: 26px;
+  font-size: 18px;
   font-weight: 900;
   padding: 10px;
   width: 250px;
-  line-height: 30px;
+  // line-height: 30px;
 }
+
 .rating {
   display: flex;
   color: #111827;
@@ -41,9 +51,15 @@
   width: 250px;
   padding: 4px;
 }
-.genre {
+
+.genres {
   color: #9ca3af;
-  width: 250px;
-  font-weight: 600;
-  padding: 4px;
+  font-weight: 400;
+  font-size: 12px;
+  display: flex;
+  width: 100%;
+
+  p {
+    padding: 8px 0;
+  }
 }

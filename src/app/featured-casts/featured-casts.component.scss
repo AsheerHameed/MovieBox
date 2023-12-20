@@ -39,6 +39,8 @@ $secondaryColor: #be123c;
 .movie_image img {
   width: 250px;
   cursor: pointer;
+  height: 375px;
+  border-radius: 25px;
 }
 .location_and_year {
   font-size: 16px;
@@ -50,9 +52,9 @@ $secondaryColor: #be123c;
 }
 .title {
   color: #111827;
-  font-size: 26px;
+  font-size: 20px;
   font-weight: 900;
-  padding: 10px;
+  padding-top: 15px;
   width: 250px;
   line-height: 30px;
 }
@@ -77,19 +79,18 @@ $secondaryColor: #be123c;
 .cards {
   display: flex;
 }
-
+.known_for_group{
+  width: 250px;
+  padding: 10px;
+}
 .known_for {
 display: flex;
 justify-content: flex-start;
-width: 100%;
 font-family: DM Sans;
 font-size: 12px;
 font-weight: 700;
-line-height: 16px;
-letter-spacing: 0em;
 text-align: left;
 color: #9CA3AF;
-margin-left: 12%;
 }
 // .genre_buttons {
 //   display: flex;
@@ -113,7 +114,6 @@ margin-left: 12%;
 #known {
 display: flex;
 width: 100%;
-margin-left: 12%;
-font-style: 18px;
+font-size: 14px;
 color: #111827;
 }

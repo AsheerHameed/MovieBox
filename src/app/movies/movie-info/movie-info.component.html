@@ -1,3 +1,4 @@
+<div class="movies_container" *ngIf="showMoviesPage">
 <div class="container" *ngIf="showPage">
   <div class="left_container">
     <div class="left_container-movie_posters">
@@ -78,6 +79,99 @@
       </div>
     </div>
   </div>
+</div>
+</div>
+<div class="series_container" *ngIf="showSeriesPage">
+<div class="container" *ngIf="showPage">
+  <div class="left_container">
+    <div class="left_container-movie_posters">
+      <img
+        src="https://image.tmdb.org/t/p/w500{{ SeriesInfo.poster_path }}"
+        alt=""
+      />
+    </div>
+    <!-- <div class="left_container-watch_trailer">
+      <a [href]="'https://www.youtube.com/watch?v=' + trailer" target="_blank">
+        <input type="button" value="Watch trailer" />
+      </a>
+    </div> -->
+    <div class="left_container-fav-group">
+      <div class="left_container-fav-group-favorite">
+        <img [src]="heart" alt="Heart" (click)="toggleImage('heart')" width="26px"
+        height="26px">
+
+        <p>Favorite</p>
+      </div>
+      <div class="left_container-fav-group-watch_later">
+        <img [src]="bookmark" alt="Bookmark" (click)="toggleImage('bookmark')"width="26px"
+        height="26px" (click)="toggleImage('bookmark')">
+
+        <p>Watch Later</p>
+      </div>
+      <div class="left_container-fav-group-watched">
+        <img [src]="watched" alt="Watched" (click)="toggleImage('watched')" width="26px"
+        height="26px">
+        <p>Watched</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="right_container">
+    <div class="right_container-title">
+      <h2>{{ SeriesInfo.name }}</h2>
+    </div>
+    <div class="right_container-cta">
+      <div class="right_container-cta-watch">
+        <input type="button" value="Watch" />
+      </div>
+      <div class="right_container-cta-bookmark">
+        <input type="button" value="Bookmark" />
+      </div>
+    </div>
+    <div class="right_container-storyline-overview-group">
+      <div class="right_container-storyline-overview-group-storyline">
+        <h2>STORYLINE</h2>
+      </div>
+      <div class="right_container-storyline-overview-group-overview">
+        <p>
+         {{SeriesInfo.overview}}
+        </p>
+      </div>
+    </div>
+
+    <div class="right_container_rating_table">
+      <div class="right_container_rating_table-rating">
+        <h6>Rating</h6>
+        <p>{{SeriesInfo.vote_average | number:'1.0-1'}} </p>
+      </div>
+      <div class="right_container_rating_table-release">
+        <h6>Release year</h6>
+        <p>{{SeriesInfo.first_air_date | date:'yyyy'}}</p>
+      </div>
+      <div class="right_container_rating_table-release">
+        <h6>No. of seasons</h6>
+        <p>{{SeriesInfo.number_of_seasons}}</p>
+      </div>
+      <div class="right_container_rating_table-genres" >
+        <h6>Genres</h6>
+        <div class="span_group">
+          <span *ngFor="let genre of SeriesInfo.genres">{{genre.name}}</span>
+        </div>
+      </div>
+      <div class="right_container_rating_table-countries">
+        <h6>Conutries</h6>
+        <div class="countries_group">
+
+          <h4 *ngFor="let countries of SeriesInfo.production_countries">{{countries.name}}</h4>
+        </div>
+      </div>
+      <!-- <div class="right_container_rating_table-duration">
+        <h6>Duration</h6>
+        <p>{{transformMinute(SeriesInfo.runtime)}}</p>
+      </div> -->
+    </div>
+  </div>
+</div>
 </div>
 <ngx-spinner bdColor="" size="large" color="#111827" type="square-jelly-box" [fullScreen]="true">
 </ngx-spinner>

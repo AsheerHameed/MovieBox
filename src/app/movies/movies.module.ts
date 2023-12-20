@@ -6,10 +6,11 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { YouTubePlayerModule } from '@angular/youtube-player';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [MovieCardsComponent, MovieInfoComponent],
-  imports: [CommonModule, RouterModule, HttpClientModule,YouTubePlayerModule,NgxSpinnerModule],
+  imports: [CommonModule, RouterModule,FormsModule, HttpClientModule,YouTubePlayerModule,NgxSpinnerModule],
   exports: [MovieCardsComponent],
 })
 export class MoviesModule {}
