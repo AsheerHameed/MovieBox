@@ -3,7 +3,7 @@ import { MovieService } from '../../services/movie.service'
 import { moviesType } from './movie_interface/movieType';
 import { Zip } from 'fflate';
 import { NavigationEnd, Router } from '@angular/router';
-import { Result, newArrivalResults } from 'src/app/featured-series/featuredSeriesType';
+import { Result, newArrivalResults } from 'src/app/home/featured-series/featuredSeriesType';
 @Component({
   selector: 'app-movie-cards',
   templateUrl: './movie-cards.component.html',

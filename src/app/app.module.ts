@@ -13,12 +13,12 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxCarouselModule } from 'ngx-light-carousel';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { HomeCarouselComponent } from './home-carousel/home-carousel.component';
-import { SearchedResultInfoComponent } from './searched-result-info/searched-result-info.component';
+import { HomeCarouselComponent } from './home/home-carousel/home-carousel.component';
+import { SearchedResultInfoComponent } from './home/searched-result-info/searched-result-info.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {  ReactiveFormsModule } from '@angular/forms';
 import { OnboardingModule } from './onboarding/onboarding.module';
-import { FeaturedMovieComponent } from './featured-series/featured-series.component';
+import { FeaturedMovieComponent } from './home/featured-series/featured-series.component';
 import { UtilitiesService } from './utilities/utilities.service';
 
 @NgModule({

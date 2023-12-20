@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { MovieService } from '../services/movie.service';
+import { MovieService } from '../../services/movie.service';
 import { Result, newArrivalResults } from './featuredSeriesType';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { UtilitiesService } from '../utilities/utilities.service';
+import { UtilitiesService } from '../../utilities/utilities.service';
 
 @Component({
   selector: 'app-featured-movie',

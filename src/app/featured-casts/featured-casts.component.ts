@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { MovieService } from '../services/movie.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { PouplarActors } from '../featured-series/featuredSeriesType';
+import { PouplarActors } from '../home/featured-series/featuredSeriesType';
 
 @Component({
   selector: 'app-featured-casts',

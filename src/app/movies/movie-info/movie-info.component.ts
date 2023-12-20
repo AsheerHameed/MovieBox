@@ -3,7 +3,7 @@ import { MovieService } from '../../services/movie.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { movieInfoType } from './movieInfoType';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { seriesInfo } from 'src/app/featured-series/seriesInfoType';
+import { seriesInfo } from 'src/app/home/featured-series/seriesInfoType';
 
 @Component({
   selector: 'app-movie-info',

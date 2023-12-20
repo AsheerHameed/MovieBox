@@ -1,7 +1,7 @@
 import { Component, ElementRef, ViewChild, HostListener, Renderer2  } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { newArrivalResults } from '../featured-series/featuredSeriesType';
-import { MovieService } from '../services/movie.service';
+import { MovieService } from '../../services/movie.service';
 import { searchResults } from './serachResultsInterface';
 
 @Component({
