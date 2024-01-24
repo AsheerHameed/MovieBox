@@ -22,6 +22,7 @@ import { FeaturedMovieComponent } from './home/featured-series/featured-series.c
 import { UtilitiesService } from './utilities/utilities.service';
 import { FavoritesListComponent } from './favorites-list/favorites-list.component';
 import { HomeModule } from './home/home.module';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { HomeModule } from './home/home.module';
     HomeCarouselComponent,
     FeaturedMovieComponent,
     FavoritesListComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
