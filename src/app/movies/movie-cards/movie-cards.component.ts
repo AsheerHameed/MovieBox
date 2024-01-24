@@ -13,7 +13,7 @@ export class MovieCardsComponent {
   movieInfo: moviesType[] = [];
   currentRoute: string;
   seriesCards : Result[];
-
+  isMobile:boolean = false;
   someValue : string ='Fullmetal Alchemist: Brotherhood'
   seriesGenresMap: { [id: number]: string } = {
     10759: "Action & Adventure",
@@ -67,9 +67,11 @@ export class MovieCardsComponent {
     });
   }
   compressWords(words: string){
-    words = words.length > 26 ? words = words.slice(0, 24) + '...' : words
+
+    words = words.length > 26 ? words = words.slice(0, 12) + '...' : words
     return words;
   }
+
   getGenreNamesByIds(genreIds: number[],type:string): string {
     return type === 'series'
   ? genreIds.map(id => this.seriesGenresMap[id] || 'Unknown Genre').join(', ')

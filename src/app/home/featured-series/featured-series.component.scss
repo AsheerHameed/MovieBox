@@ -1,31 +1,53 @@
 $primaryColor: #111827;
 $font: "DM Sans";
 $secondaryColor: #be123c;
+
 .container {
-  padding: 1rem 3rem;
+  padding: 0 3rem;
 }
+
 .carousel {
   width: 100%;
   height: 100%;
 }
+
 .carousel img {
   border-radius: 10px;
   width: 1440px;
   height: 600px;
   object-fit: cover;
 }
+
 .head_and_button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 30px 30px;
+  margin: 0 30px;
+
+  @media screen and (max-width: 560px) {
+    margin: 20px 0;
+  }
+  @media screen and (max-width: 400px) {
+    margin: 20px  0 -10px 0;  }
+
 }
+
 .head_and_button h2 {
   color: $primaryColor;
   font-family: $font;
   font-size: 36px;
   font-weight: 700;
+
+
+  @media screen and (max-width: 560px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 18px;
+    font-weight: 900;
+  }
 }
+
 .head_and_button p {
   color: $secondaryColor;
   font-family: $font;
@@ -33,6 +55,14 @@ $secondaryColor: #be123c;
   font-weight: 400;
   line-height: 24px;
   cursor: pointer;
+z-index: 1;
+  @media screen and (max-width: 560px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 14px;
+    font-weight: 900;
+  }
 }
 
 .cards_container {
@@ -42,13 +72,28 @@ $secondaryColor: #be123c;
   flex-direction: column;
   font-family: $font, sans-serif;
   padding: 0 20px;
+
+
 }
+
 .movie_image img {
   width: 250px;
   height: 375px;
   cursor: pointer;
   border-radius: 25px;
+
+
+  @media screen and (max-width: 560px) {
+    height: 220px;
+    width: 150px;
+    padding: 12px;
+  }
+  @media screen and (max-width:400px){
+    height: 180px;
+    width: 120px;
+  }
 }
+
 .location_and_year {
   font-size: 16px;
   font-weight: 600;
@@ -56,7 +101,17 @@ $secondaryColor: #be123c;
   color: #9ca3af;
   width: 250px;
   padding: 4px;
+
+
+  @media screen and (max-width: 560px) {
+    width: 155px;
+    font-size: 12px;
+  }
+  @media screen and (max-width:400px) {
+    width: 105px;
+  }
 }
+
 .title {
   color: #111827;
   font-size: 20px;
@@ -64,7 +119,18 @@ $secondaryColor: #be123c;
   padding: 10px;
   width: 250px;
   line-height: 30px;
+
+  @media screen and (max-width: 560px) {
+    font-size: 14px;
+    padding: 0;
+    width: 155px;
+    line-height: 15px;
+  }
+    @media screen and (max-width:400px) {
+    width: 105px;
+  }
 }
+
 .rating {
   display: flex;
   color: #111827;
@@ -72,23 +138,85 @@ $secondaryColor: #be123c;
   justify-content: space-between;
   width: 250px;
   padding: 4px;
+
+  @media screen and (max-width: 560px) {
+    display: none;
+
+  }
 }
+
 .rating img {
   width: 50px;
   object-fit: contain;
 }
+
 .genres {
   color: #9ca3af;
   font-weight: 400;
   font-size: 12px;
   display: flex;
   width: 100%;
-  p{
-    padding:5px 10px;
+
+  p {
+    padding: 5px 10px;
     width: 250px;
 
+
+    @media screen and (max-width: 560px) {
+      display: none;
+    }
   }
 }
+
 .cards {
   display: flex;
+  justify-content: center;
+
+  @media screen and (max-width: 560px) {
+    // height: 259px;
+    padding: 12px;
+  }
+}
+
+.image_overlays {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 20px;
+  align-items: center;
+  position: relative;
+  top: 60px;
+
+
+  @media screen and (max-width: 560px) {
+display: none;
+  }
+
+  .type {
+    background-color: #F3F4F6;
+    padding: 3px 10px;
+    color: #111827;
+    width: 74px;
+    display: flex;
+    justify-content: center;
+    height: 22px;
+    align-items: center;
+    border-radius: 12px;
+
+    @media screen and (max-width: 560px) {
+      font-size: 12px;
+      height: 20px;
+      width: 54px;
+    }
+  }
+
+  .heart img {
+    width: 30px;
+    height: 30px
+  }
+}
+.new_arrival_container{
+  @media screen and (max-width:450px) {
+    margin: -4rem 0;
+
+  }
 }

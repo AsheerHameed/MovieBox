@@ -2,23 +2,40 @@ $primaryColor: #111827;
 $font: "DM Sans";
 $secondaryColor: #be123c;
 .container {
-  padding: 1rem 3rem;
-}
+  padding: 0 3rem;
 
+  @media screen and (max-width:450px) {
+    margin: -4rem 0;
+
+  }
+}
 .head_and_button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 30px;
-  padding: 20px 0;
+  margin: 30px;
+
+  @media screen and (max-width: 560px) {
+    margin: 20px 0;
+  }
 }
+
 .head_and_button h2 {
   color: $primaryColor;
   font-family: $font;
   font-size: 36px;
   font-weight: 700;
-  line-height: normal;
+
+
+  @media screen and (max-width: 560px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 18px;
+    font-weight: 900;
+  }
 }
+
 .head_and_button p {
   color: $secondaryColor;
   font-family: $font;
@@ -26,6 +43,25 @@ $secondaryColor: #be123c;
   font-weight: 400;
   line-height: 24px;
   cursor: pointer;
+
+  @media screen and (max-width: 560px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 400px) {
+    font-size: 14px;
+    font-weight: 900;
+  }
+}
+
+.cards_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: $font, sans-serif;
+  padding: 0 20px;
+
+
 }
 
 .cards_container {
@@ -36,12 +72,25 @@ $secondaryColor: #be123c;
   font-family: $font, sans-serif;
   padding: 0 20px;
 }
+
 .movie_image img {
   width: 250px;
-  cursor: pointer;
   height: 375px;
+  cursor: pointer;
   border-radius: 25px;
+
+
+  @media screen and (max-width: 560px) {
+    height: 220px;
+    width: 150px;
+    padding: 12px;
+  }
+  @media screen and (max-width:400px){
+    height: 180px;
+    width: 120px;
+  }
 }
+
 .location_and_year {
   font-size: 16px;
   font-weight: 600;
@@ -57,31 +106,27 @@ $secondaryColor: #be123c;
   padding-top: 15px;
   width: 250px;
   line-height: 30px;
-}
-.rating {
-  display: flex;
-  color: #111827;
-  font-weight: 600;
-  justify-content: space-between;
-  width: 250px;
-  padding: 4px;
-}
-.rating img {
-  width: 50px;
-  object-fit: contain;
-}
-.genre {
-  color: #9ca3af;
-  width: 250px;
-  font-weight: 600;
-  padding: 4px;
+
+  @media screen and (max-width:430px){
+    font-size: 12px;
+    width: max-content;
+    line-height: 0px;
+
+  }
 }
 .cards {
   display: flex;
+  justify-content: center;
 }
 .known_for_group{
   width: 250px;
   padding: 10px;
+  @media screen and (max-width:430px){
+    width: 120px;
+    padding:20px  0px;
+    margin-left: 23px;
+  }
+
 }
 .known_for {
 display: flex;
@@ -92,25 +137,6 @@ font-weight: 700;
 text-align: left;
 color: #9CA3AF;
 }
-// .genre_buttons {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: fit-content;
-//   height: 30px;
-//   font-size: 12px;
-//   border-radius: 15px;
-//   border: 1px solid rgba(232, 232, 232, 0.35);
-//   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
-//   flex-shrink: 0;
-//   cursor: pointer;
-//   margin-left: 10px;
-// }
-
-// .genres
-// {
-// display: flex;
-// }
 #known {
 display: flex;
 width: 100%;

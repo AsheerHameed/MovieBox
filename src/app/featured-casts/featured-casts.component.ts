@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MovieService } from '../services/movie.service';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { PouplarActors } from '../home/featured-series/featuredSeriesType';
+import { UtilitiesService } from '../utilities/utilities.service';
 
 @Component({
   selector: 'app-featured-casts',
@@ -16,14 +17,14 @@ export class FeaturedCastsComponent {
     touchDrag: true,
     pullDrag: true,
     dots: false,
-    autoplay:true,
+    autoplay:false,
     autoplayTimeout:7000,
     navSpeed: 200,
     navText: [
     "<img src='assets/left-icon.png'/>","<img src='assets/right-icon.png'/>"],
     responsive: {
       0: {
-        items: 1,
+        items: 2,
       },
       400: {
         items: 2,
@@ -43,10 +44,13 @@ export class FeaturedCastsComponent {
   genreName: string;
   genre_ids = new Map();
 
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService,utilityService:UtilitiesService) {}
   ngOnInit() {
     this.movieService.getPopularActors().subscribe((res: any) => {
       this.results = res.results;
     });
+  }
+  getEllipsisText(text: string, maxLength: number): string {
+    return text.length > maxLength ? text.slice(0, maxLength) + '...' : text;
   }
 }

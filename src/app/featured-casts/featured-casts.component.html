@@ -20,7 +20,13 @@
           <div class="known_for_group">
             <h2 id="known">Known For:</h2>
             <div class="known_for" *ngFor="let known of profile.known_for">
-              {{known.name || known.original_title}}
+
+                  <ul>
+                    <li>
+                      {{ getEllipsisText(known.name || known.title || known.original_title, 15) }}
+                    </li>
+                  </ul>
+
             </div>
           </div>
         </div>

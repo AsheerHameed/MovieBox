@@ -20,6 +20,8 @@ import {  ReactiveFormsModule } from '@angular/forms';
 import { OnboardingModule } from './onboarding/onboarding.module';
 import { FeaturedMovieComponent } from './home/featured-series/featured-series.component';
 import { UtilitiesService } from './utilities/utilities.service';
+import { FavoritesListComponent } from './favorites-list/favorites-list.component';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,14 @@ import { UtilitiesService } from './utilities/utilities.service';
     FeaturedCastsComponent,
     HomeComponent,
     HomeCarouselComponent,
-    SearchedResultInfoComponent,
     FeaturedMovieComponent,
+    FavoritesListComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MoviesModule,
+    HomeModule,
     RouterModule,
     BrowserAnimationsModule,
     IgxCarouselModule,

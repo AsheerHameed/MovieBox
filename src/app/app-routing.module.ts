@@ -4,6 +4,7 @@ import MovieCardsComponent from './movies/movie-cards/movie-cards.component';
 import { MovieInfoComponent } from './movies/movie-info/movie-info.component';
 import { HomeComponent } from './home/home.component';
 import { UserRegistrationComponent } from './onboarding/user-registration/user-registration.component';
+import { FavoritesListComponent } from './favorites-list/favorites-list.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path:'onboarding',
     component: UserRegistrationComponent
+  },
+  {
+    path:'favorites',
+    component:FavoritesListComponent
   }
 ];
 

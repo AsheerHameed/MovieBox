@@ -1,12 +1,18 @@
 $color: #111827;
 $font: "DM Sans";
 $secondaryColor: #9ca3af;
+
 .container {
   display: flex;
   padding: 0 50px;
   height: 100vh;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width:780px){
+flex-direction: column;  }
+  @media screen and (max-width:550px){
+overflow-x: hidden;}
+
   // background: rgb(238, 174, 202);
   // background: radial-gradient(
   //   circle,
@@ -15,17 +21,34 @@ $secondaryColor: #9ca3af;
   // );
   // background-image: linear-gradient(to right top, #111827, #303746, #525967, #767d8a, #9ca3af);
 }
+
 .left_container {
   display: flex;
   flex: 4;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   &-movie_posters img {
     width: 300px;
     height: 420px;
+
     border-radius: 20px;
+
+    @media screen and (max-width:780px) {
+      width: 230px;
+      height: 320px;
+    }
+    @media screen and (max-width:550px) {
+      width: 445px;
+    height: 66%;
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 90px;
+    margin-top: 299px;
+    object-fit: contain;
+    }
   }
+
   &-watch_trailer {
     input {
       margin: 20px 0;
@@ -40,7 +63,21 @@ $secondaryColor: #9ca3af;
       font-size: 16px;
       background-color: $color;
       color: #9ca3af;
+
+
+      @media screen and (max-width:780px) {
+        margin: 5px 0;
+        width: 230px;
+        height: 50px;
+        padding: 7px 7px 7px 2px;
+        border-radius: 20px;
+        font-size: 14px;
+      }
+      @media screen and (max-width:550px) {
+  display: none;
+      }
     }
+
     input:hover {
       background-color: white;
       color: $color;
@@ -53,6 +90,22 @@ $secondaryColor: #9ca3af;
     justify-content: space-between;
     width: 300px;
     padding: 10px 30px;
+
+    img {
+      width: 26px;
+      height: 26px;
+
+      @media screen and (max-width:780px) {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    @media screen and (max-width:780px) {
+      width: 230px;
+      display: none;
+    }
+
     &-watched,
     &-watch_later,
     &-favorite {
@@ -64,6 +117,11 @@ $secondaryColor: #9ca3af;
       gap: 10px;
       font-size: 14px;
       font-family: $font;
+
+      @media screen and (max-width:780px) {
+        font-size: 12px;
+
+      }
     }
   }
 }
@@ -71,16 +129,28 @@ $secondaryColor: #9ca3af;
 .right_container {
   flex: 6;
   width: 100%;
+
   &-title h2 {
     font-family: $font;
     font-size: 40px;
     font-weight: 700;
     color: $color;
+    @media screen and (max-width:780px){
+      font-size: 24px;
+    }
+    @media screen and (max-width:550px){
+      font-size: 32px;
+      font-weight: 900;
+    }
   }
+
   &-cta {
     display: flex;
     gap: 10px;
     padding: 10px 0;
+    @media screen and (max-width:780px){
+     padding: 0;
+    }
     input {
       margin: 20px 0;
       width: 160px;
@@ -94,30 +164,50 @@ $secondaryColor: #9ca3af;
       font-size: 16px;
       background-color: $color;
       color: #9ca3af;
+      @media screen and (max-width:780px){
+        margin: 10px 0;
+        width: 115px;
+        height: 35px;
+        padding: 7px 4px 7px 1px;
+        cursor: pointer;
+        font-size: 12px;
+        background-color: #111827;
+        color: #9ca3af;      }
     }
+
     input:hover {
       background-color: white;
       color: $color;
       border: 2px solid $color;
     }
   }
+
   &-storyline-overview-group {
-    &-storyline {
+    &-storyline h2{
       font-family: $font;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 700;
       color: $color;
       padding: 6px 0;
     }
-    &-overview {
+
+    &-overview p {
       font-family: $font;
       font-size: 16px;
       font-weight: 400;
       color: $color;
       padding: 6px 0;
       text-align: justify;
+      @media screen and (max-width:780px){
+        font-size: 14px;
+        padding: 0;
+      }
+      @media screen and (max-width:550px){
+        font-size: 12px;
+      }
     }
   }
+
   &_rating_table {
     display: flex;
     flex-direction: column;
@@ -129,38 +219,77 @@ $secondaryColor: #9ca3af;
       font-size: 16px;
       color: $color;
       font-weight: 500;
+      @media screen and (max-width:780px){
+        font-size: 14px;
+        padding: 4px 0;
+      }
+      @media screen and (max-width:550px){
+        font-size: 12px;
+        padding: 4px 0;
+      }
     }
   }
+
   .right_container_rating_table-release,
   .right_container_rating_table-rating,
   .right_container_rating_table-duration {
     display: flex;
     gap: 40px;
-    width: 100%;
     justify-content: space-between;
+    align-items: center;
+
     h6 {
       font-family: $font;
       font-size: 18px;
       color: $color;
       font-weight: 600;
       padding: 10px 0;
+      @media screen and (max-width:780px){
+        font-size: 14px;
+      }
+      @media screen and (max-width:550px){
+        font-size: 12px;
+      }
     }
   }
+
   .span_group {
     display: flex;
-    margin-left: 52%;
-    flex-wrap: wrap;
-  }
-  .countries_group {
-    display: flex;
-    margin-left: 50%;
-    gap: 10px;
+    margin-right: 8%;
+    flex-wrap:wrap;
+    @media screen and (max-width:780px){
+      margin-right: 7%;
+      flex-wrap: wrap;
+    }
+    @media screen and (max-width:550px){
+      margin-right: 0;
+      margin-left: 25%;
+    }
+
   }
 
+  .countries_group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 200px;
+      width: 100px;
+    }
+
+  }
+.genre_wrapper{
+  display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+}
   .right_container_rating_table-countries,
   .right_container_rating_table-genres {
     display: flex;
     align-items: center;
+
     span {
       display: flex;
       align-items: center;
@@ -175,7 +304,14 @@ $secondaryColor: #9ca3af;
       font-size: 12px;
       margin: 5px;
       cursor: pointer;
+
+      @media screen and (max-width: 550px) {
+        height: 20px;
+        font-size: 10px;
+
+      }
     }
+
     span:hover {
       background-color: white;
       color: $color;
@@ -188,7 +324,14 @@ $secondaryColor: #9ca3af;
       color: $color;
       font-weight: 600;
       padding: 10px 0;
+      @media screen and (max-width:780px){
+        font-size: 14px;
+      }
+      @media screen and (max-width:550px){
+        font-size: 12px;
+      }
     }
+
     h4 {
       font-family: $font;
       font-size: 16px;
@@ -198,6 +341,7 @@ $secondaryColor: #9ca3af;
     }
   }
 }
+
 // .trailer_and_title {
 //   display: flex;
 //   flex-direction: column;

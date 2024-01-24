@@ -1,4 +1,8 @@
 <div class="container">
+  <div class="container_text" *ngIf= "currentRoute === '/movies'">
+    <h2>Featured Movies </h2>
+    <p>Some most watched movies of this week</p>
+  </div>
   <div class="movie_info" *ngIf= "currentRoute === '/movies' ">
     <div class="cards_container" *ngFor="let movie of movieInfo">
       <div class="movie_image">
@@ -22,6 +26,10 @@
     </div>
   </div>
 <div class="container">
+  <div class="container_text" *ngIf= "currentRoute === '/series' ">
+    <h2>Featured Series </h2>
+    <p>Some most watched series of this week</p>
+  </div>
   <div class="series_info" *ngIf= "currentRoute === '/series' ">
     <div class="cards_container" *ngFor="let movie of seriesCards">
       <div class="movie_image">
@@ -35,12 +43,13 @@
       <div class="title">
         {{ compressWords(movie.name) }}
       </div>
+
       <div class="rating">
         <img src="assets/imdb.png" alt="" />
         <div>{{ movie.vote_average }} ⭐</div>
       </div>
       <div class="genres">
-        <p>{{ getGenreNamesByIds(movie.genre_ids,'series') }}</p>
+        <p>{{getGenreNamesByIds(movie.genre_ids,'series') }}</p>
       </div>
     </div>
   </div>

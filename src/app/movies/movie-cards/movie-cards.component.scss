@@ -3,10 +3,52 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 40px;
+  padding: 25px 80px;
   gap: 0 65px;
+
+
+  @media screen and (max-width:550px)
+  {
+    padding: 0;
+    gap: 5px 15px
+  }
 }
 
+.container_text{
+  display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0px 80px;
+      h2{
+    color: #111827;
+    font-family: 'DM sans';
+    font-size: 34px;
+    font-weight: 900;
+    padding: 6px 0;
+  }
+  p{
+    color: #9ca3af;
+    font-family: 'DM sans';
+    font-size: 14px;
+    font-weight: 800;
+    // padding: 5px 0 0px 0;
+  }
+
+  @media screen and (max-width:550px)
+  {
+    padding: 10px 20px;
+
+    h2{
+      font-size: 24px;
+      font-weight: 900;
+      padding: 6px 0;
+    }
+    p{
+      font-size: 12px;
+      font-weight: 800;
+      // padding: 5px 0 0px 0;
+    }  }
+}
 .cards_container {
   display: flex;
   justify-content: center;
@@ -15,6 +57,12 @@
   font-family: "DM Sans", sans-serif;
   padding: 10px 0;
   width: 250px;
+
+  @media screen and (max-width:550px)
+{
+  width: 150px;
+
+}
 }
 
 .movie_image img {
@@ -22,7 +70,12 @@
   cursor: pointer;
   height: 375px;
   border-radius: 25px;
+  @media screen and (max-width:550px)
+{
+  width: 150px;
+  height: 220px;
 
+}
 }
 
 .location_and_year {
@@ -32,6 +85,14 @@
   color: #9ca3af;
   width: 250px;
   padding: 4px;
+  @media screen and (max-width:550px)
+  {
+    width: 140px;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 2px 0;
+
+  }
 }
 
 .title {
@@ -40,16 +101,31 @@
   font-weight: 900;
   padding: 10px;
   width: 250px;
+  @media screen and (max-width:550px)
+  {
+    width: 140px;
+    font-size: 14px;
+    padding: 2px 0;
+
+  }
   // line-height: 30px;
 }
 
 .rating {
   display: flex;
   color: #111827;
+  font-size: 14px;
   font-weight: 600;
   justify-content: space-between;
   width: 250px;
   padding: 4px;
+  @media screen and (max-width:550px)
+  {
+    width: 140px;
+    font-size: 12px;
+    padding: 2px 0;
+
+  }
 }
 
 .genres {
@@ -58,8 +134,13 @@
   font-size: 12px;
   display: flex;
   width: 100%;
-
+  @media screen and (max-width:550px)
+{
+  width: 140px;
+}
   p {
-    padding: 8px 0;
+    padding: 2px 0;
+font-size: 10px;
+font-weight: 900;
   }
 }

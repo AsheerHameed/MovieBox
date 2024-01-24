@@ -5,7 +5,6 @@
       <ng-template
         carouselSlide
         *ngFor="let movie of results.slice(5, 12)"
-
         let-i="index"
       >
         <img
@@ -13,30 +12,35 @@
         />
 
         <div class="carousel-inner">
-          <div class="name">
-            <h2>
-              {{ movie.title }}
-            </h2>
+
+          <div class="carousel_group">
+
+            <div class="name">
+              <h2>
+                {{ movie.title }}
+              </h2>
+            </div>
+            <div class="rating">
+              <img src="assets/imdb(1).png" alt="" />
+              <div>{{ movie.vote_average | number : "1.0-1" }} ⭐</div>
+            </div>
+            <div class="overview">
+              <p>
+                {{ movie.overview }}
+              </p>
+            </div>
+            <div class="watch">
+              <button style="cursor: pointer" (click)="openTrailer(i - 4)">
+                Watch trailer
+              </button>
+            </div>
           </div>
-          <div class="rating">
-            <img src="assets/imdb(1).png" alt="" />
-            <div>{{ movie.vote_average | number : "1.0-1" }} ⭐</div>
-          </div>
-          <div class="overview">
-            <p>
-              {{ movie.overview }}
-            </p>
-          </div>
-          <div class="watch">
-            <button style="cursor: pointer" (click)="openTrailer(i - 4)">
-              Watch trailer
-            </button>
-          </div>
+
         </div>
       </ng-template>
     </owl-carousel-o>
   </div>
-  <div class="search_results" *ngFor="let result of searchResult" (click)="isModalOpened = !isModalOpened" (clickOutside)="isModalOpened = false">
+ <div class="search_results" *ngFor="let result of searchResult" (click)="isModalOpened = !isModalOpened" (clickOutside)="isModalOpened = false">
     <div *ngFor="let movie of searchQueries.distinctTitles; let i = index; let isLast = last">
       <div class="search_results_container">
         <div>
@@ -65,8 +69,7 @@
         <h2>MovieBox</h2>
       </div>
     </div>
-
-    <div class="search_box">
+   <div class="search_box">
         <input
           formControlName="movie-search"
           #movieSearch
@@ -74,7 +77,7 @@
           name=""
           id=""
           class="login"
-          placeholder="What do you want to watch?"
+          placeholder="Search here..."
           (keyup.enter)="getSearchResults(movieSearch.value)"
         />
 
@@ -89,6 +92,7 @@
 
     <div class="navbar_burger-icon">
       <div class="login">
+        <h2>Wishlist</h2>
         <h2 routerLink="/onboarding">Login</h2>
       </div>
       <div class="burger_icon">

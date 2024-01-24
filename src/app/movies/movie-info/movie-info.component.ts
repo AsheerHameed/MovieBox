@@ -64,6 +64,8 @@ export class MovieInfoComponent {
     this.movieId = id;
     this.movieService.getMovieById(this.movieId).subscribe((res: any) => {
       this.movieInfo = res;
+      console.log(this.movieInfo);
+
       this.getTrailer();
     });
     this.spinner.show();

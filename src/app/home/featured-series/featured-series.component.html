@@ -9,6 +9,17 @@
         <div class="cards">
           <div class="cards_container">
             <div class="movie_image">
+              <div class="image_overlays">
+                <div class="type">
+                  <p>
+                   TV Series
+                  </p>
+                </div>
+                <div class="heart" (click)="addToFavorites(series.id)">
+  <img [src]="'assets/' + getFavStatus(series.id)">
+                </div>
+              </div>
+
               <img
                 src="https://image.tmdb.org/t/p/w500{{ series.poster_path }}"
                 [routerLink]="['/series/series', series.id]"
@@ -44,6 +55,16 @@
         <div class="cards">
           <div class="cards_container">
             <div class="movie_image">
+              <div class="image_overlays">
+                <div class="type">
+                  <p>
+                    Movie
+                  </p>
+                </div>
+                <div class="heart" (click)="addToFavorites(movie.id)">
+  <img [src]="'assets/' + getFavStatus(movie.id)">
+                </div>
+              </div>
               <img
                 src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"
                 [routerLink]="['/movies/movie', movie.id]"

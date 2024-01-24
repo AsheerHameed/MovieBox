@@ -15,13 +15,13 @@ export class HomeCarouselComponent {
     mouseDrag: false,
     touchDrag: false,
     pullDrag: true,
-    dots: true,
+    dots: false,
     autoplay: true,
-    autoplayTimeout: 4000,
+    autoplayTimeout: 9000,
     autoplayHoverPause: true,
     animateOut: 'fadeOut',
     navSpeed: 700,
-    navText: ['', ''],
+    navText: [  "",""],
     responsive: {
       0: {
         items: 1,
