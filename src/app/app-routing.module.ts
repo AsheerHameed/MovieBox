@@ -7,7 +7,8 @@ import { UserRegistrationComponent } from './onboarding/user-registration/user-r
 import { FavoritesListComponent } from './favorites-list/favorites-list.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', redirectTo:'/home', pathMatch:'full' },
+  { path: 'home', component: HomeComponent },
   {
     path:'series',
     children:[

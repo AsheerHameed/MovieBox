@@ -1,1 +1,49 @@
-<p>favorites-list works!</p>
+<div class="container">
+  <h2>My Favorites</h2>
+  <div class="head_container">
+    <div class="head_container-heart">
+      <img src="assets/heart-com.png" alt="" srcset="">
+    </div>
+    <div class="head_container-info">
+      <p>PLAYLIST</p>
+      <h1>Liked movies</h1>
+      <h5>Adam Damon,12 movies</h5>
+    </div>
+  </div>
+
+  <div class="bottom_container">
+    <div class="bottom_container-head">
+      <input type="search" placeholder="Search here" />
+    </div>
+    <div class="bottom_container-table">
+
+    <ngx-datatable *ngIf="uniqueMovies" class="material" [rows]="uniqueMovies" [columnMode]="'force'" [headerHeight]="50" [rowHeight]="50"
+    [loadingIndicator]="false" [scrollbarV]="false" [scrollbarH]="false">
+
+    <thead>
+      <tr>
+        <th class="table_heading">Movie/Series</th>
+        <th class="table_heading">Genres</th>
+        <th class="table_heading">Released on</th>
+        <th class="table_heading">Rating</th>
+      </tr>
+    </thead>
+
+    <ngx-datatable-column>
+      <ng-template let-row="row" ngx-datatable-cell-template>
+        <!-- Display both movie name and image in the same column -->
+        <div style="display: flex; align-items: center;">
+          <img [src]="'https://image.tmdb.org/t/p/w500/' + row.poster_path" alt="Movie/Series Image" style="max-width: 50px; max-height: 75px; margin-right: 10px;" />
+          <span>{{ row.name }}</span>
+        </div>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column name="Genres" prop="genre_ids"></ngx-datatable-column>
+    <ngx-datatable-column name="Released on" prop="first_air_date"></ngx-datatable-column>
+    <ngx-datatable-column name="Rating" prop="vote_average"></ngx-datatable-column>
+
+  </ngx-datatable>
+
+    </div>
+  </div>

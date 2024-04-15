@@ -5,7 +5,7 @@
       <p routerLink="/series">See more ></p>
     </div>
     <owl-carousel-o [options]="customOptionsCard">
-      <ng-template carouselSlide *ngFor="let series of results">
+      <ng-template carouselSlide *ngFor="let series of results let i=index">
         <div class="cards">
           <div class="cards_container">
             <div class="movie_image">
@@ -15,7 +15,9 @@
                    TV Series
                   </p>
                 </div>
-                <div class="heart" (click)="addToFavorites(series.id)">
+                <!-- <div class="heart" (click)="addToFavorites(series.id)"> -->
+                <div class="heart" (click)="addToFavorites(i,series.id)">
+
   <img [src]="'assets/' + getFavStatus(series.id)">
                 </div>
               </div>
@@ -40,6 +42,7 @@
               <p>{{ getGenreNamesByIds(series.genre_ids,'series') }}</p>
             </div>
           </div>
+          {{i}}
         </div>
       </ng-template>
     </owl-carousel-o>
@@ -61,9 +64,9 @@
                     Movie
                   </p>
                 </div>
-                <div class="heart" (click)="addToFavorites(movie.id)">
+                <!-- <div class="heart" (click)="addToFavorites(this.i,movie.id)">
   <img [src]="'assets/' + getFavStatus(movie.id)">
-                </div>
+                </div> -->
               </div>
               <img
                 src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}"

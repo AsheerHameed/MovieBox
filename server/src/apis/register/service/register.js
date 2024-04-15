@@ -1,4 +1,4 @@
-const { registerUserMongo, fetchAll } = require("../dao/register");
+const { registerUserMongo, fetchAll,fetchUserName } = require("../dao/register");
 const User = require("../model/user");
 
 const registerUser = async (req,res)=>{
@@ -6,8 +6,9 @@ const registerUser = async (req,res)=>{
     //check same useremail
     const userEmail = req.body.emailId;
     const ifExists = await fetchAll(User,userEmail);
+    console.log(ifExists)
 
-    if(ifExists) throw {status : 400 , message:"User Email Already Exists"};
+    if(ifExists) throw { message:"User Email Already Exists"};
     //if not register user
     const result = await registerUserMongo(User,req.body);
 
@@ -16,4 +17,16 @@ const registerUser = async (req,res)=>{
 
 }
 
-module.exports = {registerUser};
+const CheckPassword = async (req,res)=>{
+
+    //check same useremail
+    const userName = req.body.userName;
+    console.log("uusususus",userName);
+    const ifExists = await fetchUserName(User,userName);
+    console.log("----------------->",ifExists);
+
+    return ifExists;
+
+}
+
+module.exports = {registerUser,CheckPassword};

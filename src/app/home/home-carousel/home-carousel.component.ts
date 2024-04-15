@@ -10,10 +10,12 @@ import { searchResults } from './serachResultsInterface';
   styleUrls: ['./home-carousel.component.scss'],
 })
 export class HomeCarouselComponent {
-  customOptions: OwlOptions = {
+  username: string = localStorage.getItem('username') || 'Login';
+  userNameBool: boolean = !!localStorage.getItem('username');
+    customOptions: OwlOptions = {
     loop: true,
     mouseDrag: false,
-    touchDrag: false,
+    touchDrag: true,
     pullDrag: true,
     dots: false,
     autoplay: true,
@@ -54,8 +56,6 @@ export class HomeCarouselComponent {
     posterPaths: [],
     id: [],
   }
-
-
   constructor(private movieService: MovieService,private el: ElementRef, private renderer: Renderer2) {}
   ngOnInit() {
     this.movieService.getLatestMovies().subscribe((res: any) => {
@@ -64,7 +64,10 @@ export class HomeCarouselComponent {
         this.movieId = this.results[i].id;
         this.movie_ids.push(this.movieId);
       }
+
+
     });
+    // console.log('USERBANE', localStorage.getItem('username'))
     this.getTrailer();
   }
   async ngAfterViewInit() {

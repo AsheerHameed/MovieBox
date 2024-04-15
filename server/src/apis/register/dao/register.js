@@ -11,13 +11,23 @@ async function registerUserMongo(model,reqBody) {
 
     return result;
 
-    
+
 
 }
+
+const User=require('../model/user')
 
 async function fetchAll(model,userEmail){
     const result = await model.findOne({emailid : userEmail});
     return result;
 }
 
-module.exports = {registerUserMongo,fetchAll};
+
+async function fetchUserName(model,userName){
+  const result = await User.findOne({username : userName});
+  return result;
+}
+
+// const data=fetchAll(User,'richa@doshaheen.com')
+
+module.exports = {registerUserMongo,fetchAll,fetchUserName};

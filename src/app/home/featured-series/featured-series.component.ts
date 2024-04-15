@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { Result, newArrivalResults } from './featuredSeriesType';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { UtilitiesService } from '../../utilities/utilities.service';
+import { FavoritesService } from 'src/app/services/favorites.service';
 
 @Component({
   selector: 'app-featured-movie',
@@ -10,6 +11,8 @@ import { UtilitiesService } from '../../utilities/utilities.service';
   styleUrls: ['./featured-series.component.scss'],
 })
 export class FeaturedMovieComponent {
+  @Input() movie: any;
+  @Output() favoriteClicked = new EventEmitter();
   // id: number;
   isMobile : boolean = false
   customOptionsCard: OwlOptions = {
@@ -92,7 +95,8 @@ export class FeaturedMovieComponent {
 
   constructor(
     private movieService: MovieService,
-    private utility: UtilitiesService
+    private utility: UtilitiesService,
+    private favoritesService: FavoritesService
   ) {}
 
   compressTitle(title: string): string {
@@ -142,14 +146,18 @@ export class FeaturedMovieComponent {
 // Initialize a mapping for fav status
 favStatusMap: { [key: number]: string } = {};
 
-addToFavorites(index: number) {
+addToFavorites(index: number,series:number) {
+  console.log(index);
+this.favoritesService.addMovie(this.results[index])
+      console.log('movie added to favorites',this.results[index])
   // Check if the item is already in the mapping
-  if (this.favStatusMap[index] === 'favorite-outlined.png') {
+  if (this.favStatusMap[series] === 'favorite.png') {
     // Item is already a favorite, remove it from favorites
-    this.favStatusMap[index] = 'favorite.png';
+    console.log(this.favStatusMap[series]);
+
   } else {
     // Item is not a favorite, add it to favorites
-    this.favStatusMap[index] = 'favorite-outlined.png';
+    this.favStatusMap[series] = 'favorite-outlined.png';
   }
   // this.favStatusMap[index] = this.favStatusMap[index] === 'favorite-outlined.png'
   //   ? 'favorite.png'

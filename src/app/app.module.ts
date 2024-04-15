@@ -23,7 +23,11 @@ import { UtilitiesService } from './utilities/utilities.service';
 import { FavoritesListComponent } from './favorites-list/favorites-list.component';
 import { HomeModule } from './home/home.module';
 import { FooterComponent } from './footer/footer.component';
-
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { CommonFilterComponent } from './common/common-filter/common-filter.component';
+import { SearchFilterComponent } from './common/search-filter/search-filter.component';
+import { SelectFilterComponent } from './common/select-filter/select-filter.component';
+import { DateFilterComponent } from './common/date-filter/date-filter.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,9 +37,13 @@ import { FooterComponent } from './footer/footer.component';
     FeaturedMovieComponent,
     FavoritesListComponent,
     FooterComponent,
+    CommonFilterComponent,
+    SearchFilterComponent,
+    SelectFilterComponent,
+    DateFilterComponent,
   ],
   imports: [
-    BrowserModule,
+    NgxDatatableModule,    BrowserModule,
     AppRoutingModule,
     MoviesModule,
     HomeModule,

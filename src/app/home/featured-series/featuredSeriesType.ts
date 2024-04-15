@@ -6,6 +6,7 @@ export class Series {
 }
 
 export class Result {
+  index:number;
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];

@@ -1,7 +1,6 @@
 .container {
   display: flex;
   overflow: hidden;
-
 }
 body, html {
   margin: 0;
@@ -11,18 +10,25 @@ body, html {
   flex: 2;
   box-sizing:border-box;
 
+  @media screen and (max-width:550px){
+    display: none;
+  }
   img {
     height: 100vh;
     width: 100%;
     object-fit: cover;
     border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    opacity: 0.8;
+
   }
 }
 
 .group {
   padding: 15px 0;
+  @media screen and (max-width:550px){
+    padding: 8px 0;
+
+  }
 }
 
 .right_side {
@@ -31,14 +37,20 @@ body, html {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  @media screen and (max-width:550px){
+    height: 100vh;
+  }
   h2 {
     color: #111827;
     font-family: DM sans;
     font-size: 30px;
-    font-weight: 9 00;
+    font-weight: 900;
     text-align: center;
     padding: 10px 0;
+    @media screen and (max-width:550px){
+      font-size: 24px;
+      padding: 4px 0;
+    }
   }
 
   p {
@@ -47,7 +59,10 @@ body, html {
     font-size: 16px;
     font-weight: 400;
     padding: 20px 0;
-
+    @media screen and (max-width:550px){
+      font-size: 12px;
+      padding: 8px 0;
+    }
     a {
       color: #BE123C;
       cursor: pointer;
@@ -72,8 +87,7 @@ body, html {
       outline: none;
       // border-bottom: 2px solid #111827;
       width: 470px;
-
-
+      font-family:"DM sans"
     }
 
     button {
@@ -88,6 +102,16 @@ body, html {
       border: none;
       margin-top: 40px;
       cursor: pointer;
+      @media screen and (max-width:550px){
+        width:280px;
+        height:45px;
+      }
+      &:disabled {
+        background: #9ca3af;
+        color: #ffffff;
+        cursor: not-allowed;
+        box-shadow: none;
+      }
     }
   }
 
@@ -97,7 +121,13 @@ body, html {
   color: #111827;
   font-family: DM sans;
 }
-
+.error_p_styles{
+  color: #BE123C;
+  font-size: 11px;
+  font-family: 'DM sans';
+  font-weight: 600;
+  padding: 4px 0;
+}
 .email_group,
 .user_group,
 .password_group {
@@ -111,4 +141,8 @@ body, html {
 
   gap: 5px;
   padding: 10px 0;
+
+  @media screen and (max-width:550px){
+    width: 280px;
+    }
 }
